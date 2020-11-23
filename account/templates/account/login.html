@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Войти{% endblock %}
+{% block title %}Вход{% endblock %}
 
 {% block content %}
-    <h1>Войти</h1>
-    <p>Пожалуйста, используйте следующую форму для входа в систему:</p>
+    <h1>Вход</h1>
+    <p>Пожалуйста, используйте эту форму для входа в систему:</p>
     <form method="post">
         {{ form.as_p }}
         {% csrf_token %}
-    <p><input type="submit" value="Войти"></p>
+    <p><input type="submit" value="Вход"></p>
     </form>
 {% endblock %}
