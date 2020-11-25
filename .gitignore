@@ -329,3 +329,5 @@ everycheese/media/
 *.sqlite
 *.sqlite3
 
+/cert.crt
+/cert.key
