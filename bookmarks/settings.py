@@ -25,6 +25,8 @@ SECRET_KEY = 't*g48bb*q8ec#s)451h^(p-xho38!t%)bj6g(gc^bq7u4ty2kk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# THUMBNAIL_DEBUG = True
+
 ALLOWED_HOSTS = [
     'mysite.com',
     'localhost',
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
     'images.apps.ImagesConfig',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
