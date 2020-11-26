@@ -3,9 +3,12 @@
 {% block title %}Личная панель{% endblock %}
 
 {% block content %}
-    <h1>Личная панель</h1>
-    <p>
-    Добро пожаловать в вашу панель. Вы можете <a href="{% url "edit" %}">редактировать профиль</a> или
-    <a href="{% url "password_change" %}">изменить пароль</a>.
-    </p>
+  <h1>Личная панель</h1>
+  {% with total_images_created=request.user.images_created.count %}
+    <p>Добро пожаловать в вашу панель. Вы сделали закладку {{ total_images_created }} image{{ total_images_created|pluralize }}.</p>
+  {% endwith %}
+
+  <p>Перетащите следующую кнопку на панель закладок, чтобы добавить в закладки изображения с других веб-сайтов → <a href="javascript:{% include 'bookmarklet_launcher.js' %}" class="button">Добавить в закладки</a></p>
+
+  <p>Вы также можете <a href="{% url 'edit' %}">редактировать профиль</a> или <a href="{% url 'password_change' %}">изменить пароль</a>.</p>
 {% endblock %}
