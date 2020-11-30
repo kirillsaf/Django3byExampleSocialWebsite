@@ -26,6 +26,7 @@ SECRET_KEY = 't*g48bb*q8ec#s)451h^(p-xho38!t%)bj6g(gc^bq7u4ty2kk'
 DEBUG = True
 
 # THUMBNAIL_DEBUG = True
+THUMBNAIL_DEBUG = True
 
 ALLOWED_HOSTS = [
     'mysite.com',
@@ -143,3 +144,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
 ]
+
+
+from django.urls import reverse_lazy
+
+ABSOLUTE_URL_OVERRIDES = {'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])}
