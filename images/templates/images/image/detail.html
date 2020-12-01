@@ -15,6 +15,9 @@
                     <span class="total">{{ total_likes }}</span>
                     Нравиться
                 </span>
+                <span class="count">
+                    {{ total_views }} view{{ total_views|pluralize }}
+                </span>
                 <a href="#" data-id="{{ image.id }}" data-action="{% if request.user in users_like %}один{% endif %}Нравиться" class="like button">
                     {% if request.user not in users_like %}
                         Нравиться
